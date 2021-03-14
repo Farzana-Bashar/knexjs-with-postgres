@@ -4,9 +4,9 @@ class PersonDAO{
     async createPerson(firstName,lastName,email){
         const[id]=await db('person').insert(
             {
-                email=email,
-                firstName=first_name,
-                lastName=last_name
+                email,
+                firstName: first_name,
+                lastName: last_name
 
             }
         ).returning('id');
@@ -17,4 +17,4 @@ class PersonDAO{
     }
 }
 
-module.exports=new PersonDAO();
+// module.exports=new PersonDAO();

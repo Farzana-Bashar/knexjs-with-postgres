@@ -1,6 +1,15 @@
+const PersonService=require('../service/person');
+
 class PersonController {
-    createPerson(req,res){
-        
+    async createPerson(req,res){
+        try{
+            const id=await PersonService.createPerson(res.body);
+            res.status(201).json(id);
+        }
+        catch(err){
+            console.error(err);
+        }
+
     }
 
 }
