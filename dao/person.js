@@ -5,8 +5,8 @@ class PersonDAO{
         const[id]=await db('person').insert(
             {
                 email,
-                firstName: first_name,
-                lastName: last_name
+                first_name: firstName,
+                last_name: lastName
 
             }
         ).returning('id');
@@ -17,4 +17,4 @@ class PersonDAO{
     }
 }
 
-// module.exports=new PersonDAO();
+module.exports=new PersonDAO();
